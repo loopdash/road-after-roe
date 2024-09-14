@@ -1,0 +1,1091 @@
+:: StoryTitle
+Abortion Access Simulator
+
+:: StoryData
+{
+  "ifid": "4AD7C1A4-0D89-45C1-8BB5-E03AE7D5ED17",
+  "format": "SugarCube",
+  "format-version": "2.30.",
+  "start": "Start",
+  "zoom": 1
+}
+
+:: StoryInit {"position":"700,275","size":"200,200"}
+
+<<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/rtdlogo.png''images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png'>>
+<<cacheaudio "clock" "audio/clock.mp3">>
+<<cacheaudio "blender" "audio/blender.mp3">>
+<<cacheaudio "breath" "audio/breath.mp3">>
+<<cacheaudio "bar" "audio/bar.mp3">>
+<<cacheaudio "buy" "audio/SFX1.mp3">>
+<<cacheaudio "cars" "audio/cars-drive-by-01.mp3">>
+<<cacheaudio "hospital" "audio/Hospital.mp3">>
+<<cacheaudio "hospital2" "audio/hospital2.mp3">>
+<<cacheaudio "hospital3" "audio/hospital3.mp3">>
+<<cacheaudio "night" "audio/night.mp3">>
+<<cacheaudio "heli" "audio/heli.mp3">>
+<<cacheaudio "phonedial" "audio/phonedial.mp3">>
+<<cacheaudio "plane" "audio/plane.mp3">>
+<<cacheaudio "typing" "audio/typing.mp3">>
+<<cacheaudio "phonering" "audio/phonering.mp3">>
+<<cacheaudio "protest1" "audio/protest1.mp3">>
+<<cacheaudio "protest2" "audio/protest2.mp3">>
+
+:: PassageFooter
+<<if passage() !== "Start">><br>@@.buttonback;<<return [img[images/back.png]]>>@@ @@.buttonhome;<<button [img[images/home.png][Start]]>><<audio ":all" stop>><</button>>@@<</if>>
+
+:: Start {"position":"700,275","size":"200,200"}
+<picture>
+   <source 
+      media="(min-width: 650px)"
+      srcset="welcome2.gif">
+   <source 
+      media="(min-width: 465px)"
+      srcset="welcomephone.gif">
+<img src="welcomephone.gif" width="100%" height="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%; height: auto;">
+</picture><script>;(function () {var favicon  = document.createElement("link");favicon.rel  = "shortcut icon";favicon.type = "image/png";favicon.href = "favicon.png";document.head.appendChild(favicon);}());</script> 
+<<popover>><span id="noIcon"><a target="_blank" href="https://www.freeandjust.us/ride-to-decide-bus-tour"><img src="images/rtdlogo.png" width="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%;height:auto;"></a></span>
+<div style="text-align: center; font-size: 1em"><strong><h3>__Welcome to the Abortion Access Simulator!__</h3></strong></div>Since Roe v. Wade was overturned, anti-abortion extremists have passed restrictive abortion bans in states across the country. 
+<<audio ":all" stop>>
+Now, depending on where you live and your circumstances, access to abortion and reproductive healthcare can be severely limited or banned altogether. 
+<br>This simulator aims to document the real experiences people face when trying to get an abortion in these states. As a result, this game may be distressing to certain audiences - <strong>__we advise discretion before continuing on this experience.__</strong>
+<div style="text-align: center; font-size:1.2em;">
+@@.button2;<<button "Continue">><<dismisspopover>><</button>><a href="https://www.freeandjust.us/"><<button "Exit">><</button>></a>@@</div><</popover>><div style="text-align: center; font-size: 1.2em"><strong>__CHOOSE A STORY TO PLAY:__</strong></div><div style="text-align: center; font-size:1.2em;">@@.buttonorange;<<button[[Emma]]>><</button>>@@@@.buttonpink;<<button[[Amanda]]>><</button>>@@@@.buttonblue;<<button[[Kaitlyn]]>><</button>>@@ </div>
+:: Kaitlyn {"position":"875,500","size":"100,100"}
+<img src="images/kitchen.png" width="100%" height="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 90%;">
+<em>"Lia, let’s go!!"</em> Your daughter Lia is runnning late to school, and she still hasn't put her shoes on.
+
+<<timed 3s>>While shouting from the kitchen, you take stock of your breakfast options, do you:
+
+[[Make a smoothie -> smoothie]]
+
+[[Snag a granola bar -> granola]]
+<</timed>>
+:: smoothie {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "blender" volume 0.5 fadeout>>[img[images/blender.gif]]<<timed 5.5s>><<goto bathroom>><</timed>>
+:: granola {"position":"875,500","size":"100,100"}
+<img src="images/bar.gif" width="50%" height="50%" style = "display: block;margin-left: auto;margin-right: auto;width: 50%;"><<timed 1s>> <<audio ":all" stop>><<audio "bar" volume 0.5 fadeout>><<next 4.5s>><<goto bathroom>><</timed>>
+
+:: bathroom {"position":"875,500","size":"100,100"}
+As Lia heads to the car, you run to the bathroom. 
+
+You’re 6 weeks pregnant, but you’ve noticed some cramping this morning and you want to head to the bathroom just to be sure. Sure enough, you notice some spotting and get a little concerned. 
+
+What do you do?
+
+[[Ignore it. It's probably nothing. -> 12weeks]]
+
+[[Call your doctor. You wanted to schedule your first prenatal appointment soon anyways. -> calldoctor]]<br>
+:: calldoctor {"position":"875,500","size":"100,100"}
+Once you drop Lia off, you decide you should call the doctor and at least make your first prenatal appointment to check things out. 
+<<audio ":all" stop>><<audio "phonedial" volume 0.75 play>>
+<<timed 3s>>The woman on the phone answers.
+
+<<next>><em>"Hello?"</em> the woman says.
+
+<<next 2s>><em>"Hi,"</em> you say. <em>"Could I make my first prenatal appointment? I recently became 6 weeks pregnant."</em>
+
+<<next 4s>><em>"I’m sorry, but due to recent legal restrictions on abortion care, we are no longer accepting maternity patients before at least 12 weeks,"</em> she responds.
+
+The woman on the phone explains that because many women miscarry in the first 12 weeks of their pregnancy, their physicians did not want to be liable for an investigation under the grey area those appointments fell under.
+
+In shock, you decide to:
+
+[[Call more doctor offices. Surely someone will take you in.->callmore]]
+
+[[Hang up and wait till 12 weeks. ->12weeks]]
+<</timed>>
+:: callmore {"position":"875,500","size":"100,100"}
+No offices in the state of Louisiana will consider seeing you before 12 weeks. 
+
+You have no one to turn to about the spotting and cramping you are noticing. You begin to ponder: 
+
+<em>What if there’s something wrong with the baby? 
+What if I need medical care but can't be seen for another 6 weeks?</em> 
+
+[[You can only hope nothing will go wrong.->12weeks]]<br>
+:: 12weeks {"position":"875,500","size":"100,100"}
+One month later...
+
+<<timed 3s>><<addclass "body" "flash">>You are only 10 weeks pregnant, but you just woke up and the spotting has turned into full on heavy bleeding. You know this is not normal. 
+
+To top it all off you are having extreme labor-like pains -  your abdomen is cramping like crazy.
+<br>@@#test;<<nobr>><<link "You could try calling the doctor again for help.">>
+	<<replace "#test">>
+  The doctor says they can’t help you. Your husband is already at work so you’ll have to drive yourself to the ER. 
+  <</replace>>
+<</link>>
+<br>
+<</nobr>>@@
+[[Or you could go to the emergency room immediately.->emergencyroom]]
+<</timed>>
+:: emergencyroom  {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital" volume 0.75 play>><div class="column left">
+    <img src="images/hospital.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
+</div><div class="column right">You make it to the ER and are admitted. 
+<<timed 5s>><<audio ":playing" fadeout>><</timed>>
+The staff take your vitals, draw blood, and give you an ultrasound - but no one gives you answers. 
+
+Later, the doctor tells you the ultrasound shows your baby stopped growing a few weeks ago, and only has a faint heartbeat. But no one will confirm if you are having a miscarriage.
+
+[["Why not?" you ask. -> Reasons]]<br>
+</div>
+:: Reasons {"position":"875,500","size":"100,100"}
+The hospital can’t answer any of your questions about the baby or what’s going to happen next. One of the nurses offers to pray for you. 
+
+<em>"It appears that you could be having a miscarriage, but we don't want to say that's what it is. So let's just keep watching it. You can continue to come back. Of course, we're praying for you,"</em> they say.
+
+[[They send you home. ->home]]<br>
+:: home {"position":"875,500","size":"100,100"}
+<<addclass "body" "night">>Later that night, your husband grows concerned for your health. The bleeding and pain have only gotten worse, but you don’t want to return to the same emergency room that turned you away before. 
+
+You agree to try a second hospital, [[and your husband drives you there this time. ->newER]]<br>
+:: newER {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital2" volume 0.75 play>>A new doctor enters, and tells you that if you are indeed miscarrying, you should go back home and wait and follow up with your primary physician in a few days. 
+<<timed 5s>><<audio ":playing" fadeout>><</timed>>
+You ask if there is any medication they can give you to alleviate the bleeding and the pain.
+
+<em>"We’re not doing that now,"</em> the doctor explains, pointing out that those drugs are the same ones used for medication abortion. Due to recent abortion restrictions in Louisiana, they can't be prescribed to you.
+
+The doctor also refuses to refer you somewhere else for treatment, saying that  
+
+<em>"We cannot declare you are having a miscarriage on your discharge papers, because that would flag an investigation from the state."</em>
+
+[[You are sent home once again. ->home2 ]]<br>
+:: home2 {"position":"875,500","size":"100,100"}
+The heavy bleeding and cramps continue. You grieve for the loss of your baby, but also fear for your own health. 
+
+<<timed 3s>><em>"How bad would I need to get to get treatment?"</em> you think. You are infuriated that lawmakers get to have a say in your medical care now.
+
+[[You try to shake those fears and go to bed. -> home3]]
+<</timed>>
+:: home3 {"position":"875,500","size":"100,100"}
+Weeks later...
+<<timed 2s>> You finally are able to pass the pregnancy at home. 
+
+But you can’t help getting angry that you could not receive care that would have made the experience faster, less painful, less scary, and less risky.
+
+[[You wonder how many other women are now feeling the same.->KaitlynEndCard]] 
+<</timed>>
+:: KaitlynEndCard {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+Our stories are based on real people who bravely shared their personal abortion journeys. 
+
+__Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
+<div class="row"><div class="column right">This story was based on the story of Kaitlyn Joshua's experience. 
+
+Kaitlyn Joshua is a mother from Baton Rouge, Louisiana who was turned away from two different hospitals while suffering a painful miscarriage in 2022. The experience left Kaitlyn traumatized and outraged. 
+
+[[Read more about Kaitlyn's story here (npr.org)-> https://www.npr.org/sections/health-shots/2022/12/29/1143823727/bleeding-and-in-pain-she-couldnt-get-2-louisiana-ers-to-answer-is-it-a-miscarria]] 
+
+[[Learn more about the Ride to Decide Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
+</div><div class="column left"><img src="images/kaitlyn8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
+
+:: Amanda {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "breath" volume 0.75 play>><<timed 0.5s>><em>deep breath</em> 
+
+<<next 2.5s>><em>"Okay, let’s just flip it over on the count of three."</em>
+
+<<next 2s>>One... 
+<<next 1s>>Two...
+<<next>>[[THREE!->positive]] 
+<<next 3.5s>><<goto positive>>
+<</timed>>
+:: positive {"position":"875,500","size":"100,100"}
+<<fadein 3s 0.5s>><img src="images/Pregnant.png" width="65%" height="65%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;"><</fadein>>
+<<timed 3s>>You’re finally going to be parents! You and your husband Greg have waited for this day since you first met. You are so excited for the future, but part of you is a little nervous about all the chaos on the news surrounding reproductive healthcare in Texas. Fingers crossed everything goes smoothly. 
+
+[[Embrace your husband! -> embrace]]
+
+[[Feel a little anxious. -> bed]]
+<</timed>>
+:: embrace {"position":"875,500","size":"100,100"}
+[img[images/hug.gif]]
+<<timed 5s>><<goto 16weeks>><</timed>>
+
+:: bed {"position":"900,500","size":"100,100"}
+[img[images/anxiety.gif]]
+<<timed 4s>><<goto 16weeks>><</timed>>
+
+:: 16weeks {"position":"875,500","size":"100,100"}
+A few months later you are 16 weeks pregnant. You had a lovely day running errands with your husband and are relaxing on the couch when...
+<<timed 3s>> 
+				<<addclass "body" "flash">>All of a sudden you feel a sharp abdominal pain and the couch is soaked in amniotic fluid! 
+        
+<<next>> It’s your first pregnancy so you don’t know if this is normal. You begin to panic, should you tell Greg? 
+
+[[Tell Greg! -> Greg]]
+
+[[Keep quiet. -> quiet]]
+<</timed>>
+:: Greg {"position":"875,500","size":"100,100"}
+<<timed 50ms>><em>"Greg, can you come here?"</em>
+
+<<next 2s>>Greg comes over and becomes concerned. <em>"You're too early in your pregnancy for your water to break,"</em> he says.
+
+You both decide the best option is to rush to the hospital to see what’s going on. 
+
+[[Go to the ER. -> ER]]
+<</timed>>
+:: quiet {"position":"875,500","size":"100,100"}
+The pain sharpens and you decide it's best if you go to the emergency room. You call Greg over and tell him that you need an ambulance.
+
+[[Go to the ER. -> ER]]<br>
+:: ER {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital" volume 0.75 play>><div class="row"><div class="column left">
+    <img src="images/hospital.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
+</div><div class="column right">You arrive at your local emergency room, and tell the front desk your situation. They admit you immediately, and a team of doctors enter the room to discuss your case. 
+<<timed 5s>><<audio ":playing" fadeout>><</timed>>
+<em>"You have PPROM,"</em> the doctor says, explaining that you have a preterm, prelabor rupture of membranes. Once PPROM occurs, your pregnancy can't continue normally since your chances of infection are extremely high. 
+
+You and Greg are heartbroken, knowing that your baby won't survive to delivery.
+
+[[Before they can help relieve your pain, however, the doctors need you to make an important decision. -> ER2]]
+</div>
+:: ER2 {"position":"875,500","size":"100,100"}
+The doctors inform you that your baby still has a @@.fade-in-out;heartbeat@@. Since you are in Texas - where abortion was recently banned in all cases - the doctors are unable to do anything for you until your life is considered at risk. 
+
+Instead, [[the doctors say they can airlift you to New Mexico for emergency care, but it will be extremely pricey.->airlift]]
+
+Or, [[they say you can wait here until your health is bad enough to be considered life threatening, at which point they MIGHT be able to give you the care you need.->septic]] <br>
+:: airlift {"position":"875,500","size":"100,100"}
+You decide it isn't worth the risk to wait till your life is at risk. You let the doctor know you want an airlift to New Mexico. 
+<<timed 3s>> 
+<<audio ":all" stop>><<audio "heli" volume 0.65 play>><img src="images/helicopter.gif" width="75%" height="75%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;">
+You’ve never ridden in a helicopter before, but you never imagined it happening like this. You are scared and alone, since Greg wasn’t allowed to come with you. You will video call once you land, but you have to do the scary part alone. 
+
+[[Land in New Mexico. -> procedure]]
+<<next 5s>><<audio ":playing" fadeout>><</timed>>
+:: procedure {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital3" volume 0.65 play>><<fadeout 2s 4s>>The doctors put you under anesthesia and begin your procedure.<</fadeout>>
+
+<<fadein 2s 6s>>You wake up from the procedure hours later still drowsy...<</fadein>>
+
+<<fadein 2s 8s>><em>"The procedure was a success!"</em> a nurse says, [[as you go back to sleep.->after]] <</fadein>><<timed 12s>><<audio ":playing" fadeout>>
+<</timed>>
+:: after {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital" volume 0.65 time 3 play>><<fadein 2s>>    <img src="images/bed2.png" width="25%" height="25%" style="display: block; border: none;margin-left: auto;margin-right: auto;"> 
+
+You wake up in a hospital bed hours later. You decide to call Greg and reflect on your journey to New Mexico. <</fadein>>
+
+<<timed 4s>><em>"It all happened so fast, I still can’t believe it,"</em> Greg says.
+
+<<next>><em>"I know. I can’t imagine what would've happened if I hadn't been airlifted, but it’s so wrong that they had to send me out of state at all,"</em> you say. You are infuriated that lawmakers get to have a say in your medical care now.
+
+<<next>>You and Greg are grateful the doctors were able to send you to the right place - [[knowing that many other women have not been as lucky as you. ->Amandafinal]]<<audio ":playing" fadeout>>
+<</timed>>
+:: Amandafinal {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+Our stories are based on real people who bravely shared their personal abortion journeys. 
+
+__Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
+<div class="row"><div class="column right">This story was based on the story of Amanda Zurawksi's experience. 
+
+Amanda Zurawski spent three days in the ICU after being denied emergency abortion care in 2022, shortly after the Supreme Court overturned Roe v. Wade.  
+
+Zurawski sued the state of Texas, but her challenge was [[recently rejected->https://www.texastribune.org/2024/05/31/texas-supreme-court-zurawski-abortion/]] by the state’s Supreme Court in a devastating blow to patients across Texas.
+
+[[Read more about Amanda’s story here (cnn.com)-> https://www.cnn.com/2023/04/26/health/abortion-hearing-texas-senators-amanda-zurawski/index.html]] 
+
+[[Learn more about the Ride to Decide Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
+</div><div class="column left"><img src="images/amanda8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
+:: septic {"position":"875,500","size":"100,100"}
+You know your health insurance isn't going to cover an airlift, so it seems like you have no choice but to wait until your health is bad enough to be considered life threatening. 
+
+Shocked and scared, [[you move to a room to wait. -> waitover]]<br>
+:: waitover {"position":"875,500","size":"100,100"}
+Suddenly, after three days of waiting, your body goes into septic shock from the growing infection in your uterus - an extremely dangerous and life threatening condition.
+
+You are rushed to the ICU. In the meantime, your doctors finally get clearance from local lawyers and politicians to terminate your pregnancy and treat your infection. 
+
+<<fadeout 2s 14s>>The doctors put you under anesthesia and begin your procedure.<</fadeout>><<fadein 2s 16s>><img src="images/bed2.png" width="30%" height="30%" style= "display: block; border: none;margin-left: auto;margin-right: auto;"> 
+You wake up from the procedure hours later still drowsy and see Greg sitting next to you, looking distraught. You reach for him...<</fadein>>
+
+<<fadein 2s 21s>><em>"The procedure was a success!"</em> you hear a nurse says, [[as you go back to sleep. -> after2]]
+<</fadein>>
+:: after2 {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital2" volume 0.65 play>>You wake up in a hospital bed hours later. Greg greets you with tears.
+<<timed 5s>><<audio ":playing" fadeout>><</timed>>
+Greg tells you that since you were forced to develop septic shock to access treatment, the infection caused one of your fallopian tubes to become permanently closed. This can significantly affect your chances of becoming pregnant again in the future. 
+
+You are heartbroken, and extremely frustrated that it ended this way. [[It didn’t have to.->Amandafinal]]<br>
+:: Emma {"position":"875,500","size":"100,100"}
+<div class="row"><div class="column left">@@.rumble;<img src="images/alarm.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;">@@</div><div class="column right"><<audio ":all" stop>><<audio "clock" volume 0.4 fadeout>>BEEP! BEEP! BEEP!
+<<timed 2s>>
+You wake up in a fit of pain to your alarm clock going off. You grab your phone and check the time. It’s 8:53 am. 
+	
+<em>Shit. </em>You missed your 8am class, but the cramps in your abdomen keep growing. It’s hard for you to even sit up without getting sick.
+
+<em>Where is this pain coming from? </em>Just last night you were hanging out with your boyfriend Leo at Jessa’s house, and everything was fine.
+
+You text your best friend Deja about your pain, and <<link 'she texts back.'>></div>
+    <<dialog 'Deja' 'popups'>>
+		<div class= "message align-right">the cramps are getting really bad</div>
+		<div class= "message align-right">i literally don't know where they came from</div>
+		<<timed 1.5s>><div class= "messagegrey"><div>maybe you should take a pregnancy test then</div></div>
+		<<next>> <div class= "messagegrey"><div>you never know</div></div>
+		<<next>> <div class= "messagegrey"><div>I can get you one after class</div></div><</timed>>
+	<<onclose>>
+		<<goto [[test]]>><</dialog>><</link>><</timed>>
+
+:: doctor {"position":"1250,825","size":"100,100"}
+<<audio ":all" stop>><<audio "hospital" volume 0.75 play>><<timed 5s>><<audio ":playing" fadeout>><</timed>><div class="row"><div class="column left">
+    <img src="images/hospital.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
+</div><div class="column right">You visit your doctor, who conducts bloodwork to confirm the pregnancy.
+
+  <em>"I think you're about 6 or 7 weeks along," </em>says the doctor, looking at the results of your bloodwork. The test was right.
+
+    You are scared and overwhelmed. <em>"I can't be a mom right now," </em> you think. 
+
+    You decide to:
+    <<link 'Text Deja for advice.'>>
+        <<dialog 'Deja' 'popups'>>
+        <div class= "message align-right">DEJA</div>
+        <div class= "message align-right">He got me PREGNANT what do i do?</div>
+        <<timed 1.5s>> 	<div class= "message align-right">I'm just not ready to have a baby</div>
+            <<next>> <div class= "message align-right"> I NEED to find a way to have an abortion</div>
+        <<next>> <div class= "messagegrey" ><div>this is all so crazy, but it will all be okay Emma. I'm here for you</div></div>
+        <<next>> <div class= "messagegrey"><div>Is there a clinic I can take you to Saturday?</div></div>
+        <<next>> <div class= "messagegrey"><div>My sister can drive us</div></div><</timed>><</dialog>>
+    <</link>>
+    [[Do more research on nearby clinics.->research]]</div>
+  </div>
+:: mom {"position":"1450,375","size":"100,100"}
+<<audio ":all" stop>><<audio "phonedial" volume 0.75 play>><<timed 2.5s>><em>"Mom, I’m pregnant."</em>
+
+<<next>>Your mom says she will call the family doctor and makes an appointment to confirm your pregnancy.
+
+While your mom sorts things out with the doctor, you take a moment to reflect as <<linkappend "everything sinks in." t8n>>
+
+<em>My period isn’t even two weeks late, I can’t believe this. I’m just not ready to have a baby. I hope there’s still time for me to make a decision...or maybe the test wasn't accurate?</em>
+
+You decide to:
+[[Visit your doctor.-> doctor]]
+
+[[Do research on having an abortion.->research]] <</linkappend>>
+<</timed>>
+:: research {"position":"1625,625","size":"100,100"}
+<<audio ":all" stop>><<audio "typing" volume 1 fadeout>>You open your browser and search:<br>
+<div style ="width: 60%;box-sizing: border-box;border: 2px solid #ccc;border-radius: 25px;font-size: 1em;background-color: white;background-image: url('images/searchicon.png');background-position: 10px 12.5px; background-repeat: no-repeat;padding: 12px 20px 12px 40px;"><strong>abortion services near me</strong></div>
+The top results are for ‘crisis pregnancy centers,’ <br>
+<div><img src="images/Frame 1.png" width="80%" style ="border: 2px solid #ccc;"></div>
+but a bit more digging shows you those are actually __fake health centers that aren’t licensed to provide real reproductive health care.__ 
+
+[[No abortion clinics appear near you.-> abortion2]]<br>
+:: abortion2 {"position":"1625,625","size":"100,100"}
+You keep scrolling until you finally find a legit clinic with appointments in __<strong>Virginia,</strong>__ more than 500 miles away. <br>
+<div><img src="images/Frame 2.png" width="80%" style ="border: 2px solid #ccc;"></div>
+It's your only choice, however, as you live in Georgia and the state government has banned all abortions after 6 weeks of pregnancy. 
+
+<em>What if Deja’s sister can’t drive us that far?</em> All you know is you have to get there soon.
+
+Do you:
+[[Walk to Deja's dorm and ask about driving to Virginia.->driving]]
+
+[[Buy a plane ticket to Virginia.->plane]]<br>
+:: driving {"position":"1300,600","size":"100,100"}
+<<audio ":all" stop>><<audio "cars" volume 0.75 fadeout>>
+<img src="images/walking.gif" width="70%" style="display: block; border: none;margin-left: auto;margin-right: auto;">
+<<timed 5s>><<goto driving2>><</timed>>
+
+:: driving2 {"position":"1300,600","size":"100,100"}
+<div class="row"><div class="column left">
+    <img src="images/dorm.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
+</div><div class="column right">
+You make it to Deja’s apartment and immediately start whispering, trying to come up with a plan. 
+
+Deja's sister Tiffany says she can’t drive you that far, so she suggests getting a plane ticket to Virginia on a budget airline. You really don’t want to have to fly after the procedure but it doesn’t seem like you have an option. 
+
+After searching for tickets, you realize that even all the money you have saved up from lifeguarding last summer isn't enough to get you to Virginia in the coming days. The only flights within your budget are for a month later. 
+<br>@@#test;<<nobr>><<link "You could ask for help from Deja and her sister.">>
+	<<replace "#test">>
+		Thankfully, Deja's sister loans you the rest of the money you need to get to Virginia - and agrees to take you to the airport in the morning. You make an appointment at the clinic before you try to get some sleep for the night. 
+	  [[Board your flight to Virginia.->plane]]
+  <</replace>>
+<</link>>
+<br>
+<br>
+<<link "Or you could postpone your procedure a few more weeks.">>
+	<<replace "#test">>
+  You decide to make your appointment at the clinic for three weeks later - those are the earliest plane tickets within your budget. 
+  [[Skip three weeks and board your flight to Virginia.->plane]]
+	<</replace>>
+<</link>><</nobr>>@@</div>
+:: plane {"position":"1300,600","size":"100,100"}
+<<audio ":all" stop>><<audio "plane" volume 0.75 fadeout>><span id="dog">@@.shudder;<img src="images/plane.png" width="70%" style="-webkit-transform: scaleX(-1);transform: scaleX(-1); padding-left: 10px;padding-bottom: 10px;display: block;margin-left: auto;margin-right: auto;">@@</span>
+<<timed 1.5s>>After your flight, you call an Uber to take you to the clinic. 
+<<next 3.5s>><<audio "plane" stop>><<replace "#dog">>@@.shudder;<img src= "images/clinic.png" width="95%" height="95%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;">@@<</replace>><<audio "protest1" volume 0 fadein>>
+You hear a crowd as the car gets closer to the clinic. As your Uber turns into the parking lot, you see a crowd of older people and little kids screaming, blocking you from the clinic entrance. 
+
+As your Uber driver drops you off, you decide to:
+<<linkappend "Stand and wait for the crowd to disperse.">>
+<<audio "protest2" volume 0 fadein>>
+The group seems to be getting louder and more animated. You become worried about whether you'll ever make it in.
+
+Soon a person from the clinic comes outside. 
+
+<em>"Come with me. I'll escort you inside,"</em> they say. <</linkappend>>
+
+[[Push through the crowd of people blocking you.->clinic]]
+<</timed>>
+:: clinic {"position":"1300,600","size":"100,100"}
+<<audio ":all" stop>>
+Once inside, a friendly receptionist greets you at the check in, and asks you questions about your income to gauge what the cost of your treatment will be. 
+
+<em>"Since you are a student it’s only $400 today,"</em> the receptionist says. 
+
+<em>"$400???"</em> You already spent that much just to get to the clinic. There's no way you can pay for that all at once.
+
+<em>"If you can't afford that now, we do offer a payment plan. Would you like to sign up for that?"</em> asks the receptionist.
+
+[[Respond yes. Hopefully you'll make enough money in the next few months to pay it off.->optin]]
+
+[[Respond no, and leave the clinic. There's no way you can afford that even WITH a payment plan.->optout]]<br>
+:: optout {"position":"1300,600","size":"100,100"}
+You decide to leave the clinic without getting an abortion. As you exit, you can’t help but feel angry. 
+
+<em>"I just can’t believe lawmakers get to have a say in my medical care now. I should have been able to get help at home in Georgia," </em>you think.
+
+You start to wonder [[whether more could be done to make reproductive healthcare more accessible to young women like you.-> EmmaEndCard]]<br>
+:: optin {"position":"1300,600","size":"100,100"}
+<<audio ":all" stop>><<audio "buy" volume 0.5 play>>You opt into the payment plan program and make your first of 36 payments. 
+
+As you go back to your seat and wait to get the procedure done, you can’t help but feel angry. 
+
+<em>"I just can’t believe lawmakers get to have a say in my medical care now. I should have been able to get help at home in Georgia," </em>you think.
+
+You start to wonder [[whether more could be done to make reproductive healthcare more accessible to women everywhere.-> EmmaEndCard]]<br>
+:: test {"position":"1200,500","size":"100,100"}
+Deja stops by after class and gives you a pregnancy test. 
+
+<<fadein 1s 1s>><img src="images/testbox.png" width="20%" style="display: block; border: none;margin-left: auto;margin-right: auto;"> <</fadein>>
+
+<<timed 4s>>As you take the test, you become nervous about what to do if it comes back positive. 
+
+You await the [[results of your test.->testresults]]
+<</timed>>
+:: testresults {"position":"1300,600","size":"100,100"}
+
+<<fadein 3s 0.5s>><img src="images/Pregnant.png" width="65%" height="65%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;"><</fadein>>
+<<timed 3s>> Your test comes back @@color:red;positive@@. You are in disbelief, and don't know who to turn to for advice next. All you want is someone to support you through whatever comes next.
+
+You decide to:
+[[Call your mom.->mom]]
+
+[[Visit your doctor.->doctor]]
+
+[[Start researching how to get an abortion.->research]]
+<</timed>>
+:: EmmaEndCard {"position":"875,500","size":"100,100"}
+<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+Our stories are based on real people who bravely shared their personal abortion journeys. 
+
+__Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
+<div class="row"><div class="column right">This story was based on the story of Emma Burns's experience. 
+
+Emma Burns was a college student at Northern Arizona University when she needed an abortion. Before Emma could proceed, however, she was required by state law to view an ultrasound, listen to her fetal heartbeat, and wait more than a week for a follow-up appointment with a physician. Emma was able to clear the hurdles placed between her and the care she needed, and today credits her abortion with saving her life. 
+
+[[Read more about Emma's story here (azmirror.com)-> https://azmirror.com/2023/10/18/womens-lives-like-mine-hang-in-the-balance-if-medication-abortion-is-banned/]] 
+
+[[Learn more about the Ride to Decide Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
+</div><div class="column left"><img src="images/emma8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
+:: StoryScript [script]
+(function () {
+    'use strict';
+    // popover macro, by chapel, for SugarCube 2
+    // v1.0.1
+
+    function handleClasses () {
+        return [].slice.call(arguments).flat(Infinity).filter( function (c) {
+            return c && typeof c === 'string' && c.trim();
+        }) || [];
+    }
+
+    function popover (content, classList) {
+        classList = handleClasses(classList);
+        $('#ui-overlay, #ui-dialog').addClass('popover');
+        // classList
+        $('#ui-overlay, #ui-dialog, #ui-dialog-body').addClass(classList);
+        // no-click
+        if (classList.includesAny('noclick', 'no-click')) {
+            $('#ui-overlay').removeClass('ui-close');
+        }
+        // dialog
+        Dialog.setup('', 'popover');
+        Dialog.wiki(content);
+        Dialog.open();
+        // remove classes
+        $(document).one(':dialogclosed', function () {
+            $('#ui-overlay').addClass('ui-close');
+            $('#ui-overlay, #ui-dialog').removeClass('popover');
+            $('#ui-overlay, #ui-dialog, #ui-dialog-body').removeClass(classList);
+        });
+    }
+
+    // built-in options: invert, opaque, transparent, noclick
+    Macro.add('popover', {
+        tags: null,
+        handler : function () {
+            popover(this.payload[0].contents, this.args);
+        }
+    });
+
+    Macro.add('dismisspopover', {
+        skipArgs: true,
+        handler : function () {
+            if ($('#ui-overlay').hasClass('popover')) {
+                Dialog.close();
+            }
+        }
+    });
+
+    setup.popover = popover;
+}());
+// fading-macro-set.min.js, for SugarCube 2, by Chapel
+// v1.1.0, 2024-02-20, 1d7a524b6004aa67a99f9037e0c3bf2b537193d5
+Macro.add("fadein",{tags:null,handler:function(){var t,a,s=$(document.createElement("span")),e=this.payload[0].contents;if(0===this.args.length)return this.error("no arguments given");t=Util.fromCssTime(this.args[0]),a=this.args.length>1?Util.fromCssTime(this.args[1]):0,s.wiki(e).addClass("macro-"+this.name).appendTo(this.output).hide().delay(a).fadeIn(t)}}),Macro.add("fadeout",{tags:null,handler:function(){var t,a,s=$(document.createElement("span")),e=this.payload[0].contents;if(0===this.args.length)return this.error("no arguments given");t=Util.fromCssTime(this.args[0]),a=this.args.length>1?Util.fromCssTime(this.args[1]):0,s.wiki(e).addClass("macro-"+this.name).appendTo(this.output).delay(a).fadeOut(t)}});
+// end fading-macro-set.min.js
+// dialog API macro set, by chapel; for sugarcube 2
+// version 1.3.0
+// see the documentation: https://github.com/ChapelR/custom-macros-for-sugarcube-2#dialog-api-macros
+UIBar.destroy();
+// <<dialog>> macro
+(function () {
+    'use strict';
+    // v1.0.0
+    // preload images prior to story startup
+
+    function preloadImage (url, cb) {
+        var img = new Image();
+        img.onload = cb;
+        img.onerror = cb;
+        img.src = url;
+    }
+
+    function preloadAll (urls, cb) {
+        var loaded = 0;
+        var toBeLoaded = urls.length;
+        if (toBeLoaded === 0) {
+            throw new Error("No URLs to preload!");
+        }
+        urls.forEach( function (url) {
+            preloadImage( url, function () {
+                loaded++;
+                if (loaded === toBeLoaded) {
+                    cb();
+                }
+            });
+        });
+    }
+
+    function isInit () {
+        return State.length <= 0;
+    }
+
+
+    function preload () {
+        var list = [].slice.call(arguments).flatten();
+        var id = isInit() ? LoadScreen.lock() : false;
+        preloadAll( list, function () {
+            if (id) {
+                LoadScreen.unlock(id);
+            }
+        });
+        return id;
+    }
+
+    setup.preload = preload;
+    setup.preload.force = false;
+
+    /* <<preload imageUrls...>> */
+    Macro.add('preload', {
+        handler : function () {
+            if (!isInit() && !setup.preload.force) {
+                return this.error("Attempting to preload images outside of `StoryInit` or similar can cause performance issues. Set `setup.preload.force` to `true` if you want to do it anyway.");
+            }
+            preload(this.args.flatten().filter( function (url) {
+                return typeof url === 'string';
+            }));
+        }
+    });
+}());
+Macro.add('dialog', {
+       tags : ['onopen', 'onclose'],
+    handler : function () {
+        
+        // handle args (if any)
+        var errors = [];
+        var content = '', onOpen = null, onClose = null;
+        var title = (this.args.length > 0) ? this.args[0] : '';
+        var classes = (this.args.length > 1) ? this.args.slice(1).flatten() : [];
+
+        this.payload.forEach( function (pl, idx) {
+            if (idx === 0) {
+                content = pl.contents;
+            } else {
+                if (pl.name === 'onopen') {
+                    onOpen = onOpen ? onOpen + pl.contents : pl.contents;
+                } else {
+                    onClose = onClose ? onClose + pl.contents : pl.contents;
+                }
+            }
+        });
+        
+        // add the macro- class
+        classes.push('macro-' + this.name);
+        
+        // dialog box
+        Dialog.setup(title, classes.join(' '));
+        Dialog.wiki(content);
+
+        // should these be shadowWrapper-aware?
+        if (onOpen && typeof onOpen === 'string' && onOpen.trim()) {
+            $(document).one(':dialogopened', function () {
+                $.wiki(onOpen);
+            });
+        }
+
+        if (onClose && typeof onClose === 'string' && onClose.trim()) {
+            $(document).one(':dialogclosed', function () {
+                $.wiki(onClose);
+            });
+        }
+
+        Dialog.open();
+        
+    }
+
+});
+
+// <<popup>> macro
+Macro.add('popup', {
+    handler : function () {
+        
+        // errors
+        if (this.args.length < 1) {
+            return this.error('need at least one argument; the passage to display');
+        }
+        if (!Story.has(this.args[0])) {
+            return this.error('the passage ' + this.args[0] + 'does not exist');
+        }
+        
+        // passage name and title
+        var psg   = this.args[0];
+        var title = (this.args.length > 1) ? this.args[1] : '';
+        var classes = (this.args.length > 2) ? this.args.slice(2).flatten() : [];
+        
+        // add the macro- class
+        classes.push('macro-' + this.name);
+        
+        // dialog box
+        Dialog.setup(title, classes.join(' '));
+        Dialog.wiki(Story.get(psg).processText());
+        Dialog.open();
+        
+    }
+
+});
+
+// <<dialogclose>> macro
+Macro.add('dialogclose', { 
+    skipArgs : true, 
+    handler : function () {
+        Dialog.close();
+    } 
+});
+
+:: StoryStylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url("https://use.typekit.net/gzh4vzw.css");
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(#EA873D, #E997AB);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    white-space: normal;
+}
+
+#passages{
+ width: 80%; 
+ max-width:850px; 
+ margin:auto; 
+ padding:20px; 
+ border: solid #000 0.05em; 
+ border-radius: 0.2em; 	
+ font-family:'Press Start 2P';
+ color:inherit; 
+ font-size:0.9rem; 
+ color:#000; 
+ text-align:left; 
+ background-color:#fff; 
+ box-shadow: #000 0.5em 0.5em 0; 
+ line-height:20px; 
+}
+
+@media only screen and (max-width: 600px) {
+  #passages {
+  width: 90%; 
+  max-width:850px; 
+  padding:10px; 
+  border: solid #000 0.05em; 
+  border-radius: 0.2em; 	
+  font-family:'Press Start 2P';
+  color:inherit; 
+  font-size:0.7rem; 
+  color:#000; 
+  text-align:left; 
+  background-color:#fff; 
+  box-shadow: #000 0.5em 0.5em 0; 
+  line-height:10px; 
+  margin-top: -1em;
+  margin-bottom: 1em;
+  }
+
+  h2{
+    font-size:1rem; 
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #story{
+    margin-left: 3.5em;
+  }
+  #ui-dialog img{
+    max-width: 85%;
+  }
+  #ui-dialog{
+    max-width: 58em;
+  }   
+  #ui-dialog-body {
+      padding: 1.5em;
+}}
+#ui-dialog-body{
+	background: #EAEBDA;
+  font-family:'Press Start 2P';font-size:0.9rem; color:#000;
+  border: 0px;
+}
+#ui-dialog-title{
+	padding:.5em 1em .5em .5em;
+
+}
+@media screen and (max-width: 768px) {
+                #story {
+                    margin-left: 1.25em;
+                }
+        #ui-dialog-body {
+      font-size: 0.8em;}
+            }
+#ui-dialog-titlebar{
+	font-family:'Press Start 2P';font-weight:bold; font-size:0.85rem; color:#000;
+	background: #EAEBDA;
+}
+#ui-dialog-close{
+	color: grey;
+}
+.popups {
+ max-width:750px; margin:auto; padding:20px; border: solid #000 0.05em; border-radius: 0.2em; 	font-family:'Press Start 2P';font-weight:bold;color:inherit; font-size:0.85rem; color:#000; text-align:left; background-color:#fff; box-shadow: #000 0.5em 0.5em 0; line-height:20px; 
+}
+
+#ui-bar {
+display: none;
+}
+
+
+img {
+	max-width: 100%;
+}
+.shadow {
+	text-shadow: 0.08em 0.08em 0.08em #FFF;
+}
+.emboss {
+	text-shadow: 0.08em 0.08em 0em #FFF;
+	color: black;
+}
+.blur {
+	color: transparent;
+	text-shadow: 0em 0em 0.08em #FFF;
+}
+.blurrier {
+	color: transparent;
+	text-shadow: 0em 0em 0.2em #FFF;
+}
+.blurrier::selection {
+	background-color: transparent;
+	color: transparent;
+}
+.blurrier::-moz-selection {
+	background-color: transparent;
+	color: transparent;
+}
+.smear {
+	color: transparent;
+	text-shadow:
+		0em    0em 0.02em rgba(255,255,255,0.75),
+		-0.2em 0em 0.5em  rgba(255,255,255,0.5),
+		0.2em  0em 0.5em  rgba(255,255,255,0.5);
+}
+.mirror {
+	display: inline-block;
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+}
+.upside-down {
+	display: inline-block;
+	transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+}
+
+@-webkit-keyframes fade-in-out {
+	0%,
+	to {opacity: 0.5}
+	50% {opacity: 1}
+}
+@keyframes fade-in-out {
+	0%,
+	to {opacity: 0.5}
+	50% {opacity: 1}
+}
+.fade-in-out {
+	text-decoration: none;
+	animation: fade-in-out 0.5s ease-in-out infinite alternate;
+	-webkit-animation: fade-in-out 0.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rumble {
+	50% {
+		-webkit-transform: translateY(-.2em);
+		transform: translateY(-.2em)
+	}
+}
+@keyframes rumble {
+	50% {
+		-webkit-transform: translateY(-.2em);
+		transform: translateY(-.2em)
+	}
+}
+.rumble {
+	-webkit-animation: rumble linear 0.1s 0s infinite;
+	animation: rumble linear 0.1s 0s infinite;
+	display:inline-block;
+}
+
+@-webkit-keyframes shudder {
+	50% {
+		-webkit-transform: translateX(.3em);
+		transform: translateX(.3em)
+	}
+}
+@keyframes shudder {
+	50% {
+		-webkit-transform: translateX(.3em);
+		transform: translateX(.3em)
+	}
+}
+.shudder {
+	-webkit-animation: shudder linear .3s 0s infinite;
+	animation: shudder linear .3s 0s infinite;
+	display: inline-block;
+}
+@-webkit-keyframes pulse {
+	0%  { -webkit-transform: scale(0, 0); transform: scale(0, 0) }
+	20% { -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2) }
+	40% { -webkit-transform: scale(0.9, 0.9); transform: scale(0.9, 0.9) }
+	60% { -webkit-transform: scale(1.05, 1.05); transform: scale(1.05, 1.05) }
+	80% { -webkit-transform: scale(0.925, 0.925); transform:scale(0.925, 0.925) }
+	to  { -webkit-transform: scale(1, 1); transform: scale(1, 1) }
+}
+@keyframes pulse {
+	0%  { -webkit-transform: scale(0, 0); transform: scale(0, 0) }
+	20% { -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2) }
+	40% { -webkit-transform: scale(0.9, 0.9); transform: scale(0.9, 0.9) }
+	60% { -webkit-transform: scale(1.05, 1.05); transform: scale(1.05, 1.05) }
+	80% { -webkit-transform: scale(0.925, 0.925); transform: scale(0.925, 0.925) }
+	to  { -webkit-transform: scale(1, 1); transform: scale(1, 1) }
+}
+.pulse {
+	-webkit-animation: pulse 0.8s;
+	animation: pulse 0.8s;
+	display: inline-block;
+}
+
+.buttonorange button {
+  background-color:#EA873D;
+  margin: 10px;
+  text-align: center;
+	color: white;
+  	letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px 23px;
+      font-size:120%;
+    min-width: 150px;
+  height: 50px;
+  padding: 15px 20px;
+    border-radius: 5px;
+}
+.buttonorange button:hover {
+  background: #fff;
+  color: #EA873D
+}
+.button2 button {
+  background-color:#062544;
+  margin: 10px;
+  text-align: center;
+	color: white;
+  	letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px 23px;
+      font-size:120%;
+    min-width: 150px;
+  height: 50px;
+  padding: 15px 20px;
+    border-radius: 5px;
+}
+.button2 button:hover {
+  background: #fff;
+  color: #062544
+}
+
+.buttonback img {
+  background-color: transparent ;
+  max-width: 35px;
+  border: 2px transparent;
+}
+.buttonback img:hover {
+  background: #fff;
+  color: white
+}
+.buttonhome button {
+  background-color: transparent;
+  max-width: 40px;
+  border: 2px transparent;
+  float: right;
+}
+.buttonhome button:hover {
+  background: #fff;
+  color: white
+}
+.buttonpink button {
+  background-color:#E997AB;
+  margin: 10px;
+  text-align: center;
+	color: white;
+  	letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px 23px;
+      font-size:120%;
+    min-width: 150px;
+  height: 50px;
+  padding: 15px 20px;
+    border-radius: 5px;
+}
+.buttonpink button:hover {
+  background: #fff;
+  color: #E997AB
+}.buttonblue button {
+  background-color:#127DAA;
+  margin: 10px;
+  text-align: center;
+	color: white;
+  	letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 3px 23px;
+      font-size:120%;
+    min-width: 150px;
+  height: 50px;
+  padding: 15px 20px;
+    border-radius: 5px;
+}
+.buttonblue button:hover {
+  background: #fff;
+  color: #127DAA
+}
+.column {
+  float: left;
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  button{
+    font-size: 1.3em
+  }
+}
+.message {
+	display: flex;
+	flex-direction: column;
+	/* Your styling for the main message box. */
+	color: white;
+	background-color: #218aff;
+	padding: 0.8em 0.8em 0.8em 0.8em;
+    border-radius: 25px;
+    max-width: 50%;
+	font-size:90%
+  
+}
+
+.align-right { 
+            margin-left: auto; 
+        } 
+.messagegrey {
+	display: flex;
+	flex-direction: row;
+	/* Your styling for the main message box. */
+	color: black;
+	background-color: #d8d8d8;
+	padding: 0.8em 0.8em 0.8em 0.8em;
+    border-radius: 25px;
+    max-width: 50%;
+	font-size:90%
+
+}
+h3 {
+  font-size: 1.4em;
+  margin-block-start: 0em;
+  margin-block-start: 0em;
+}
+body.flash {
+  background-image: url("images/flash.gif");
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: cover; /* maybe contain, based on the image and goals */
+}
+
+body.night {
+  background-image: url("images/night.png");
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: cover; /* maybe contain, based on the image and goals */
+}
+body.welcome {
+  background-image: url("welcome.gif");
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: cover; /* maybe contain, based on the image and goals */
+}
+#noIcon a.link-external:after {
+	content: "";
+}
+
