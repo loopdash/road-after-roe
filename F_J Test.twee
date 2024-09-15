@@ -5,16 +5,17 @@ Abortion Access Simulator
 {
   "ifid": "4AD7C1A4-0D89-45C1-8BB5-E03AE7D5ED17",
   "format": "SugarCube",
-  "format-version": "2.30.",
+  "format-version": "2.30.0",
   "start": "Start",
   "zoom": 1
 }
 
 :: StoryInit {"position":"700,275","size":"200,200"}
-
 <<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/rtdlogo.png''images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png'>>
 <<cacheaudio "clock" "audio/clock.mp3">>
 <<cacheaudio "blender" "audio/blender.mp3">>
+<<cacheaudio "base-track" "audio/base-track.mp3">>
+<<cacheaudio "retro-jump" "audio/base-track.mp3">>
 <<cacheaudio "breath" "audio/breath.mp3">>
 <<cacheaudio "bar" "audio/bar.mp3">>
 <<cacheaudio "buy" "audio/SFX1.mp3">>
@@ -32,6 +33,7 @@ Abortion Access Simulator
 <<cacheaudio "protest2" "audio/protest2.mp3">>
 
 :: PassageFooter
+<<audio "base-track" volume 0.6 loop play>>
 <<if passage() !== "Start">><br>@@.buttonback;<<return [img[images/back.png]]>>@@ @@.buttonhome;<<button [img[images/home.png][Start]]>><<audio ":all" stop>><</button>>@@<</if>>
 
 :: Start {"position":"700,275","size":"200,200"}
@@ -182,7 +184,7 @@ Kaitlyn Joshua is a mother from Baton Rouge, Louisiana who was turned away from 
 </div><div class="column left"><img src="images/kaitlyn8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
 
 :: Amanda {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "breath" volume 0.75 play>><<timed 0.5s>><em>deep breath</em> 
+<<audio "breath" volume 0.75 play>><<timed 0.5s>><em>deep breath</em> 
 
 <<next 2.5s>><em>"Okay, let’s just flip it over on the count of three."</em>
 
@@ -208,6 +210,7 @@ Kaitlyn Joshua is a mother from Baton Rouge, Louisiana who was turned away from 
 <<timed 4s>><<goto 16weeks>><</timed>>
 
 :: 16weeks {"position":"875,500","size":"100,100"}
+<<audio "retro-jump" volume 0.9 play>>
 A few months later you are 16 weeks pregnant. You had a lovely day running errands with your husband and are relaxing on the couch when...
 <<timed 3s>> 
 				<<addclass "body" "flash">>All of a sudden you feel a sharp abdominal pain and the couch is soaked in amniotic fluid! 
