@@ -12,7 +12,7 @@ Abortion Access Simulator
 
 :: StoryInit {"position":"700,275","size":"200,200"}
 
-<<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/rtdlogo.png''images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png'>>
+<<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/roadafterroe.png''images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png'>>
 <<cacheaudio "clock" "audio/clock.mp3">>
 <<cacheaudio "blender" "audio/blender.mp3">>
 <<cacheaudio "breath" "audio/breath.mp3">>
@@ -44,7 +44,7 @@ Abortion Access Simulator
       srcset="welcomephone.gif">
 <img src="welcomephone.gif" width="100%" height="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%; height: auto;">
 </picture><script>;(function () {var favicon  = document.createElement("link");favicon.rel  = "shortcut icon";favicon.type = "image/png";favicon.href = "favicon.png";document.head.appendChild(favicon);}());</script> 
-<<popover>><span id="noIcon"><a target="_blank" href="https://www.freeandjust.us/ride-to-decide-bus-tour"><img src="images/rtdlogo.png" width="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%;height:auto;"></a></span>
+<<popover>><span id="noIcon"><a target="_blank" href="https://www.freeandjust.us/ride-to-decide-bus-tour"><img src="images/roadafterroe.png" width="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%;height:auto;"></a></span>
 <div style="text-align: center; font-size: 1em"><strong><h3>__Welcome to the Abortion Access Simulator!__</h3></strong></div>Since Roe v. Wade was overturned, anti-abortion extremists have passed restrictive abortion bans in states across the country. 
 <<audio ":all" stop>>
 Now, depending on where you live and your circumstances, access to abortion and reproductive healthcare can be severely limited or banned altogether. 
