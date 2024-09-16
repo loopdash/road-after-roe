@@ -42,6 +42,7 @@ Abortion Access Simulator
    <source 
       media="(min-width: 465px)"
       srcset="welcomephone.gif">
+   <img src="welcome2.gif" width="100%" height="100%" style="display: block; margin-left: auto; margin-right: auto; width: 100%; height: auto; border: 8px solid #000; image-rendering: pixelated; box-shadow: none;">
 <img src="welcomephone.gif" width="100%" height="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%; height: auto;">
 </picture><script>;(function () {var favicon  = document.createElement("link");favicon.rel  = "shortcut icon";favicon.type = "image/png";favicon.href = "favicon.png";document.head.appendChild(favicon);}());</script> 
 <<popover>><span id="noIcon"><a target="_blank" href="https://www.freeandjust.us/ride-to-decide-bus-tour"><img src="images/roadafterroe.png" width="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%;height:auto;"></a></span>
@@ -788,7 +789,19 @@ body {
 	color: grey;
 }
 .popups {
- max-width:750px; margin:auto; padding:20px; border: solid #000 0.05em; border-radius: 0.2em; 	font-family:'Press Start 2P';font-weight:bold;color:inherit; font-size:0.85rem; color:#000; text-align:left; background-color:#fff; box-shadow: #000 0.5em 0.5em 0; line-height:20px; 
+  max-width: 750px; 
+  margin: auto; 
+  padding: 20px; 
+  border: solid #000 8px; 
+  border-radius: 0; 
+  font-family: 'Press Start 2P'; 
+  font-weight: bold; 
+  color: #000; 
+  font-size: 0.85rem; 
+  text-align: left; 
+  background-color: #fff; 
+  box-shadow: none; 
+  line-height: 20px;
 }
 
 #ui-bar {
