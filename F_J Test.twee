@@ -297,19 +297,17 @@ Shocked and scared, [[you move to a room to wait. -> waitover]]<br>
 Suddenly, after three days of waiting, your body goes into septic shock from the growing infection in your uterus - an extremely dangerous and life threatening condition.
 
 You are rushed to the ICU. In the meantime, your doctors finally get clearance from local lawyers and politicians to terminate your pregnancy and treat your infection. 
-
-The doctors put you under anesthesia and begin your procedure.
-
-<<fadein 0.5s>><img src="images/clock.gif" id="waitingClock" width="30%" height="30%" style="display: block; border: none; margin-left: auto; margin-right: auto;"><</fadein>>
-
+<div id="imageContainer">
+  <p>The doctors put you under anesthesia and begin your procedure.</p>
+  <img src="images/clock.gif" id="waitingClock" width="30%" height="30%" style="display: block; border: none; margin-left: auto; margin-right: auto;">
+</div>
 <<timed 4s>>
   <<replace "#imageContainer">>
     <img src="images/bed2.png" width="30%" height="30%" style="display: block; border: none; margin-left: auto; margin-right: auto;">
-  <</replace>>
+    You wake up from the procedure hours later still drowsy and see Greg sitting next to you, looking distraught. You reach for him...
+
+    <em>"The procedure was a success!"</em> you hear a nurse says, [[as you go back to sleep. -> after2]]<</replace>>
 <</timed>>
-
-<div id="imageContainer"></div>
-
 :: after2 {"position":"875,500","size":"100,100"}
 <<audio ":all" stop>><<audio "hospital2" volume 0.65 play>>You wake up in a hospital bed hours later. Greg greets you with tears.
 <<timed 5s>><<audio ":playing" fadeout>><</timed>>
