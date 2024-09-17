@@ -12,9 +12,11 @@ Abortion Access Simulator
 
 :: StoryInit {"position":"700,275","size":"200,200"}
 
-<<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/roadafterroe.png' 'images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png' 'images/clock.gif'>>
+<<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/roadafterroe-2.png' 'images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png' 'images/clock.gif'>>
 <<cacheaudio "clock" "audio/clock.mp3">>
 <<cacheaudio "blender" "audio/blender.mp3">>
+<<cacheaudio "base-track" "audio/base-track.mp3">>
+<<cacheaudio "retro-jump" "audio/retro-jump.mp3">>
 <<cacheaudio "breath" "audio/breath.mp3">>
 <<cacheaudio "bar" "audio/bar.mp3">>
 <<cacheaudio "buy" "audio/SFX1.mp3">>
@@ -32,7 +34,9 @@ Abortion Access Simulator
 <<cacheaudio "protest2" "audio/protest2.mp3">>
 
 :: PassageFooter
-<<if passage() !== "Start">><br>@@.buttonback;<<return [img[images/back.png]]>>@@ @@.buttonhome;<<button [img[images/home.png][Start]]>><<audio ":all" stop>><</button>>@@<</if>>
+<<if passage() !== "Start">>
+<<audio "base-track" volume 0.6 play loop>>
+<br>@@.buttonback;<<return [img[images/back.png]]>>@@ @@.buttonhome;<<button [img[images/home.png][Start]]>><</button>>@@<</if>>
 
 :: Start {"position":"700,275","size":"200,200"}
 <picture>
@@ -44,7 +48,7 @@ Abortion Access Simulator
       srcset="welcomephone.gif">
 <img src="welcomephone.gif" width="100%" height="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%; height: auto;">
 </picture><script>;(function () {var favicon  = document.createElement("link");favicon.rel  = "shortcut icon";favicon.type = "image/png";favicon.href = "favicon.png";document.head.appendChild(favicon);}());</script> 
-<<popover>><span id="noIcon"><a target="_blank" href="https://www.freeandjust.us/ride-to-decide-bus-tour"><img src="images/roadafterroe.png" width="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%;height:auto;"></a></span>
+<<popover>><span id="noIcon"><a target="_blank" href="https://www.freeandjust.us/ride-to-decide-bus-tour"><img src="images/roadafterroe-2.png" width="100%" style = "display: block;margin-left: auto;margin-right: auto;width: 100%;height:auto;"></a></span>
 <div style="text-align: center; font-size: 1em"><strong><h3>__Welcome to the Abortion Access Simulator!__</h3></strong></div>Since Roe v. Wade was overturned, anti-abortion extremists have passed restrictive abortion bans in states across the country. 
 <<audio ":all" stop>>
 Now, depending on where you live and your circumstances, access to abortion and reproductive healthcare can be severely limited or banned altogether. 
@@ -62,9 +66,10 @@ Now, depending on where you live and your circumstances, access to abortion and 
 [[Snag a granola bar -> granola]]
 <</timed>>
 :: smoothie {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "blender" volume 0.5 fadeout>>[img[images/blender.gif]]<<timed 5.5s>><<goto bathroom>><</timed>>
+<<audio "blender" volume 0.5 fadeout>>[img[images/blender.gif]]<<timed 5.5s>><<goto bathroom>><</timed>>
+
 :: granola {"position":"875,500","size":"100,100"}
-<img src="images/bar.gif" width="50%" height="50%" style = "display: block;margin-left: auto;margin-right: auto;width: 50%;"><<timed 1s>> <<audio ":all" stop>><<audio "bar" volume 0.5 fadeout>><<next 4.5s>><<goto bathroom>><</timed>>
+<img src="images/bar.gif" width="50%" height="50%" style = "display: block;margin-left: auto;margin-right: auto;width: 50%;"><<timed 1s>><<audio "bar" volume 0.5 fadeout>><<next 4.5s>><<goto bathroom>><</timed>>
 
 :: bathroom {"position":"875,500","size":"100,100"}
 As Lia heads to the car, you run to the bathroom. 
@@ -106,8 +111,10 @@ What if I need medical care but can't be seen for another 6 weeks?</em>
 [[You can only hope nothing will go wrong.->12weeks]]<br>
 :: 12weeks {"position":"875,500","size":"100,100"}
 One month later...
-
-<<timed 3s>><<addclass "body" "flash">>You are only 10 weeks pregnant, but you just woke up and the spotting has turned into full on heavy bleeding. You know this is not normal. 
+<<timed 3s>>
+<<audio "base-track" stop>>
+<<audio "retro-jump" volume 0.2 play loop>>
+<<addclass "body" "flash">>You are only 10 weeks pregnant, but you just woke up and the spotting has turned into full on heavy bleeding. You know this is not normal. 
 
 To top it all off you are having extreme labor-like pains -  your abdomen is cramping like crazy.
 <br>@@#test;<<nobr>><<link "You could try calling the doctor again for help.">>
@@ -120,7 +127,9 @@ To top it all off you are having extreme labor-like pains -  your abdomen is cra
 [[Or you could go to the emergency room immediately.->emergencyroom]]
 <</timed>>
 :: emergencyroom  {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "hospital" volume 0.75 play>><div class="column left">
+<<audio "base-track" volume 0.6 play loop>>
+<<audio "retro-jump" stop>>
+<<audio "hospital" volume 0.75 play>><div class="column left">
     <img src="images/hospital.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
 </div><div class="column right">You make it to the ER and are admitted. 
 <<timed 5s>><<audio ":playing" fadeout>><</timed>>
@@ -141,8 +150,8 @@ The hospital can’t answer any of your questions about the baby or what’s goi
 
 You agree to try a second hospital, [[and your husband drives you there this time. ->newER]]<br>
 :: newER {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "hospital2" volume 0.75 play>>A new doctor enters, and tells you that if you are indeed miscarrying, you should go back home and wait and follow up with your primary physician in a few days. 
-<<timed 5s>><<audio ":playing" fadeout>><</timed>>
+<<audio "hospital2" volume 0.75 play>>A new doctor enters, and tells you that if you are indeed miscarrying, you should go back home and wait and follow up with your primary physician in a few days. 
+<<timed 5s>><<audio "hospital2" fadeout>><</timed>>
 You ask if there is any medication they can give you to alleviate the bleeding and the pain.
 
 <em>"We’re not doing that now,"</em> the doctor explains, pointing out that those drugs are the same ones used for medication abortion. Due to recent abortion restrictions in Louisiana, they can't be prescribed to you.
@@ -182,7 +191,7 @@ Kaitlyn Joshua is a mother from Baton Rouge, Louisiana who was turned away from 
 </div><div class="column left"><img src="images/kaitlyn8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
 
 :: Amanda {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "breath" volume 0.75 play>><<timed 0.5s>><em>deep breath</em> 
+<<audio "breath" volume 0.75 play>><<timed 0.5s>><em>deep breath.</em> 
 
 <<next 2.5s>><em>"Okay, let’s just flip it over on the count of three."</em>
 
@@ -210,7 +219,9 @@ Kaitlyn Joshua is a mother from Baton Rouge, Louisiana who was turned away from 
 :: 16weeks {"position":"875,500","size":"100,100"}
 A few months later you are 16 weeks pregnant. You had a lovely day running errands with your husband and are relaxing on the couch when...
 <<timed 3s>> 
-				<<addclass "body" "flash">>All of a sudden you feel a sharp abdominal pain and the couch is soaked in amniotic fluid. 
+<<audio "base-track" stop>>
+<<audio "retro-jump" volume 0.2 play loop>>
+<<addclass "body" "flash">>All of a sudden you feel a sharp abdominal pain and the couch is soaked in amniotic fluid. 
         
 <<next>> It’s your first pregnancy so you don’t know if this is normal. You begin to panic, should you tell Greg? 
 
@@ -218,7 +229,10 @@ A few months later you are 16 weeks pregnant. You had a lovely day running erran
 
 [[Keep quiet. -> quiet]]
 <</timed>>
+
 :: Greg {"position":"875,500","size":"100,100"}
+<<audio "retro-jump" stop>>
+<<audio "base-track" volume 0.6 play loop>>
 <<timed 50ms>><em>"Greg, can you come here?"</em>
 
 <<next 2s>>Greg comes over and becomes concerned. <em>"You're too early in your pregnancy for your water to break,"</em> he says.
@@ -228,14 +242,16 @@ You both decide the best option is to rush to the hospital to see what’s going
 [[Go to the ER. -> ER]]
 <</timed>>
 :: quiet {"position":"875,500","size":"100,100"}
+<<audio "retro-jump" stop>>
+<<audio "base-track" volume 0.6 play loop>>
 The pain sharpens and you decide it's best if you go to the emergency room. You call Greg over and tell him that you need an ambulance.
 
 [[Go to the ER. -> ER]]<br>
 :: ER {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "hospital" volume 0.75 play>><div class="row"><div class="column left">
+<<audio "hospital" volume 0.75 play>><div class="row"><div class="column left">
     <img src="images/hospital.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
 </div><div class="column right">You arrive at your local emergency room, and tell the front desk your situation. They admit you immediately, and a team of doctors enter the room to discuss your case. 
-<<timed 5s>><<audio ":playing" fadeout>><</timed>>
+<<timed 5s>><<audio "heli" fadeout>><</timed>>
 <em>"You have PPROM,"</em> the doctor says, explaining that you have a preterm, prelabor rupture of membranes. Once PPROM occurs, your pregnancy can't continue normally since your chances of infection are extremely high. 
 
 You and Greg are heartbroken, knowing that your baby won't survive to delivery.
@@ -251,20 +267,20 @@ Or, [[they say you can wait here until your health is bad enough to be considere
 :: airlift {"position":"875,500","size":"100,100"}
 You decide it isn't worth the risk to wait till your life is at risk. You let the doctor know you want an airlift to New Mexico. 
 <<timed 3s>> 
-<<audio ":all" stop>><<audio "heli" volume 0.65 play>><img src="images/helicopter.gif" width="75%" height="75%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;">
+<<audio "heli" volume 0.65 play>><img src="images/helicopter.gif" width="75%" height="75%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;">
 You’ve never ridden in a helicopter before, but you never imagined it happening like this. You are scared and alone, since Greg wasn’t allowed to come with you. You will video call once you land, but you have to do the scary part alone. 
 
 [[Land in New Mexico. -> procedure]]
 <<next 5s>><<audio ":playing" fadeout>><</timed>>
 :: procedure {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "hospital3" volume 0.65 play>><<fadeout 2s 4s>>The doctors put you under anesthesia and begin your procedure.<</fadeout>>
+<<audio "hospital3" volume 0.65 play>><<fadeout 2s 4s>>The doctors put you under anesthesia and begin your procedure.<</fadeout>>
 
 <<fadein 2s 6s>>You wake up from the procedure hours later still drowsy...<</fadein>>
 
 <<fadein 2s 8s>><em>"The procedure was a success."</em> a nurse says, [[as you go back to sleep.->after]] <</fadein>><<timed 12s>><<audio ":playing" fadeout>>
 <</timed>>
 :: after {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><<audio "hospital" volume 0.65 time 3 play>><<fadein 2s>>    <img src="images/bed2.png" width="25%" height="25%" style="display: block; border: none;margin-left: auto;margin-right: auto;"> 
+<<audio "hospital" volume 0.65 time 3 play>><<fadein 2s>>    <img src="images/bed2.png" width="25%" height="25%" style="display: block; border: none;margin-left: auto;margin-right: auto;"> 
 
 You wake up in a hospital bed hours later. You decide to call Greg and reflect on your journey to New Mexico. <</fadein>>
 
@@ -275,7 +291,7 @@ You wake up in a hospital bed hours later. You decide to call Greg and reflect o
 <<next>>You and Greg are grateful the doctors were able to send you to the right place - [[knowing that many other women have not been as lucky as you. ->Amandafinal]]<<audio ":playing" fadeout>>
 <</timed>>
 :: Amandafinal {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+<div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
 Our stories are based on real people who bravely shared their personal abortion journeys. 
 
 __Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
@@ -334,7 +350,7 @@ You text your best friend Deja about your pain, and <<link 'she texts back.'>></
 		<<goto [[test]]>><</dialog>><</link>><</timed>>
 
 :: doctor {"position":"1250,825","size":"100,100"}
-<<audio ":all" stop>><<audio "hospital" volume 0.75 play>><<timed 5s>><<audio ":playing" fadeout>><</timed>><div class="row"><div class="column left">
+<<audio "hospital" volume 0.75 play>><<timed 5s>><<audio ":playing" fadeout>><</timed>><div class="row"><div class="column left">
     <img src="images/hospital.png" width="90%" style="padding-top: 3px; padding-right: 15px;display: block; border: none;margin-left: auto;margin-right: auto;"> 
 </div><div class="column right">You visit your doctor, who conducts bloodwork to confirm the pregnancy.
 
@@ -356,7 +372,7 @@ You text your best friend Deja about your pain, and <<link 'she texts back.'>></
     [[Do more research on nearby clinics.->research]]</div>
   </div>
 :: mom {"position":"1450,375","size":"100,100"}
-<<audio ":all" stop>><<audio "phonedial" volume 0.75 play>><<timed 2.5s>><em>"Mom, I’m pregnant."</em>
+<<audio "phonedial" volume 0.75 play>><<timed 2.5s>><em>"Mom, I’m pregnant."</em>
 
 <<next>>Your mom says she will call the family doctor and makes an appointment to confirm your pregnancy.
 
@@ -370,7 +386,7 @@ You decide to:
 [[Do research on having an abortion.->research]] <</linkappend>>
 <</timed>>
 :: research {"position":"1625,625","size":"100,100"}
-<<audio ":all" stop>><<audio "typing" volume 1 fadeout>>You open your browser and search:<br>
+<<audio "typing" volume 1 fadeout>>You open your browser and search:<br>
 <div style ="width: 60%;box-sizing: border-box;border: 2px solid #ccc;border-radius: 25px;font-size: 1em;background-color: white;background-image: url('images/searchicon.png');background-position: 10px 12.5px; background-repeat: no-repeat;padding: 12px 20px 12px 40px;"><strong>abortion services near me</strong></div>
 The top results are for ‘crisis pregnancy centers,’ <br>
 <div><img src="images/Frame 1.png" width="80%" style ="border: 2px solid #ccc;"></div>
@@ -389,7 +405,7 @@ Do you:
 
 [[Buy a plane ticket to Virginia.->plane]]<br>
 :: driving {"position":"1300,600","size":"100,100"}
-<<audio ":all" stop>><<audio "cars" volume 0.75 fadeout>>
+<<audio "cars" volume 0.75 fadeout>>
 <img src="images/walking.gif" width="70%" style="display: block; border: none;margin-left: auto;margin-right: auto;">
 <<timed 5s>><<goto driving2>><</timed>>
 
@@ -417,7 +433,7 @@ After searching for tickets, you realize that even all the money you have saved 
 	<</replace>>
 <</link>><</nobr>>@@</div>
 :: plane {"position":"1300,600","size":"100,100"}
-<<audio ":all" stop>><<audio "plane" volume 0.75 fadeout>><span id="dog">@@.shudder;<img src="images/plane.png" width="70%" style="-webkit-transform: scaleX(-1);transform: scaleX(-1); padding-left: 10px;padding-bottom: 10px;display: block;margin-left: auto;margin-right: auto;">@@</span>
+<<audio "plane" volume 0.75 fadeout>><span id="dog">@@.shudder;<img src="images/plane.png" width="70%" style="-webkit-transform: scaleX(-1);transform: scaleX(-1); padding-left: 10px;padding-bottom: 10px;display: block;margin-left: auto;margin-right: auto;">@@</span>
 <<timed 1.5s>>After your flight, you call an Uber to take you to the clinic. 
 <<next 3.5s>><<audio "plane" stop>><<replace "#dog">>@@.shudder;<img src= "images/clinic.png" width="95%" height="95%" style = "display: block;margin-left: auto;margin-right: auto;width: 70%;">@@<</replace>><<audio "protest1" volume 0 fadein>>
 You hear a crowd as the car gets closer to the clinic. As your Uber turns into the parking lot, you see a crowd of older people and little kids screaming, blocking you from the clinic entrance. 
@@ -434,7 +450,7 @@ Soon a person from the clinic comes outside.
 [[Push through the crowd of people blocking you.->clinic]]
 <</timed>>
 :: clinic {"position":"1300,600","size":"100,100"}
-<<audio ":all" stop>>
+
 Once inside, a friendly receptionist greets you at the check in, and asks you questions about your income to gauge what the cost of your treatment will be. 
 
 <em>"Since you are a student it’s only $400 today,"</em> the receptionist says. 
@@ -453,7 +469,7 @@ You decide to leave the clinic without getting an abortion. As you exit, you can
 
 You start to wonder [[whether more could be done to make reproductive healthcare more accessible to young women like you.-> EmmaEndCard]]<br>
 :: optin {"position":"1300,600","size":"100,100"}
-<<audio ":all" stop>><<audio "buy" volume 0.5 play>>You opt into the payment plan program and make your first of 36 payments. 
+<<audio "buy" volume 0.5 play>>You opt into the payment plan program and make your first of 36 payments. 
 
 As you go back to your seat and wait to get the procedure done, you can’t help but feel angry. 
 
@@ -482,7 +498,8 @@ You decide to:
 [[Start researching how to get an abortion.->research]]
 <</timed>>
 :: EmmaEndCard {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+<<audio ":all" stop>>
+<div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
 Our stories are based on real people who bravely shared their personal abortion journeys. 
 
 __Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
@@ -714,41 +731,61 @@ body {
     background-attachment: fixed;
     white-space: normal;
 }
+#passages {
+    width: 80%; 
+    max-width: 850px; 
+    margin: auto; 
+    padding: 20px; 
+    border: 10px solid #f5b8c1;
+    font-family: 'Press Start 2P';
+    color: inherit; 
+    font-size: 0.9rem; 
+    color: #000; 
+    text-align: left; 
+    background-color: #fff; 
+    box-shadow: none; 
+    line-height: 20px; 
+    position: relative; /* Add this line to enable relative positioning */
+}
 
-#passages{
- width: 80%; 
- max-width:850px; 
- margin:auto; 
- padding:20px; 
- border: solid #000 8px;
- border-radius: 0.2em; 	
- font-family:'Press Start 2P';
- color:inherit; 
- font-size:0.9rem; 
- color:#000; 
- text-align:left; 
- background-color:#fff; 
- box-shadow: none; 
- line-height:20px; 
+#passages::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #f5b8c1;
+}
+
+#passages::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #f5b8c1;
 }
 
 @media only screen and (max-width: 600px) {
   #passages {
-  width: 90%; 
-  max-width:850px; 
-  padding:10px; 
-  border: solid #000 0.05em; 
-  border-radius: 0.2em; 	
-  font-family:'Press Start 2P';
-  color:inherit; 
-  font-size:0.7rem; 
-  color:#000; 
-  text-align:left; 
-  background-color:#fff; 
-  box-shadow: #000 0.5em 0.5em 0; 
-  line-height:10px; 
-  margin-top: -1em;
-  margin-bottom: 1em;
+    width: 90%; 
+    max-width:850px; 
+    padding:10px; 
+    border: solid #000 0.05em; 
+    font-family:'Press Start 2P';
+    color:inherit; 
+    font-size:0.7rem; 
+    color:#000; 
+    text-align:left; 
+    background-color:#fff; 
+    line-height:10px; 
+    margin-top: -1em;
+    margin-bottom: 1em;
+    border: 10px solid #f5b8c1;
   }
 
   h2{
