@@ -322,7 +322,7 @@ You are rushed to the ICU. In the meantime, your doctors finally get clearance f
     <img src="images/bed2.png" width="30%" height="30%" style="display: block; border: none; margin-left: auto; margin-right: auto;">
     You wake up from the procedure hours later still drowsy and see Greg sitting next to you, looking distraught. You reach for him...
 
-    <em>"The procedure was a success!"</em> you hear a nurse says, [[as you go back to sleep. -> after2]]<</replace>>
+    <em>"The procedure was a success!"</em> you hear a nurse say, [[as you go back to sleep. -> after2]]<</replace>>
 <</timed>>
 :: after2 {"position":"875,500","size":"100,100"}
 <<audio ":all" stop>><<audio "hospital2" volume 0.65 play>>You wake up in a hospital bed hours later. Greg greets you with tears.
