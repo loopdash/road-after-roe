@@ -2,18 +2,7 @@
 <html data-init="no-js">
 <head>
 <meta charset="UTF-8" />
-<title>Road After Roe: Abortion Access Simulator</title>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YVGPWE3GCX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YVGPWE3GCX');
-</script>
-
+<title>Abortion Access Simulator</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <!--
 
@@ -737,7 +726,32 @@ Macro.add('dialogclose', {
     handler : function () {
         Dialog.close();
     } 
-});</script><tw-passagedata pid="1" name="StoryInit" tags="" position="700,275" size="200,200">&lt;&lt;preload &#39;images/hospital.png&#39; &#39;images/rtdlogo_1.gif&#39; &#39;images/schedule.png&#39; &#39;images/bed.png&#39;&#39;images/bed2.png&#39;&#39;images/kitchen.png&#39;&#39;images/night.png&#39;&#39;images/anxiety.gif&#39;&#39;images/helicopter.gif&#39; &#39;images/alarm.png&#39;&#39;images/walking.gif&#39;&#39;images/flash.gif&#39; &#39;images/hug.gif&#39; &#39;images/testbox.png&#39; &#39;images/plane.png&#39; &#39;images/roadafterroe-2.png&#39; &#39;images/back.png&#39; &#39;images/home.png&#39; &#39;images/amanda8bit.png&#39; &#39;images/kaitlyn8bit.png&#39; &#39;images/emma8bit.png&#39; &#39;images/blender.gif&#39; &#39;images/bar.gif&#39;&#39;images/Pregnant.png&#39;&#39;images/Not Pregnant.png&#39; &#39;images/testbox.png&#39;&#39;images/clinic.png&#39; &#39;images/clock.gif&#39;&gt;&gt;
+});</script><tw-passagedata pid="1" name="StoryInit" tags="" position="700,275" size="200,200">/* Password Protection Script */
+&lt;&lt;script&gt;&gt;
+(function () {
+    var correctPassword = &quot;FreeAndJust2024&quot;;
+    var userPassword = localStorage.getItem(&quot;userPassword&quot;);
+
+    // Check if the password is already saved in localStorage
+    if (userPassword === correctPassword) {
+        return; // Allow access
+    }
+
+    // Prompt the user for the password
+    var enteredPassword = prompt(&quot;This story is password protected. Please enter the password to continue:&quot;);
+
+    // If the entered password is correct, save it in localStorage and allow access
+    if (enteredPassword === correctPassword) {
+        localStorage.setItem(&quot;userPassword&quot;, correctPassword);
+    } else {
+        // If the password is incorrect, display an alert and restart the game
+        alert(&quot;Incorrect password. Please reload the page to try again.&quot;);
+        window.location.href = &quot;&quot;; // Refresh the page to restart
+    }
+})();
+&lt;&lt;/script&gt;&gt;
+
+&lt;&lt;preload &#39;images/hospital.png&#39; &#39;images/rtdlogo_1.gif&#39; &#39;images/schedule.png&#39; &#39;images/bed.png&#39;&#39;images/bed2.png&#39;&#39;images/kitchen.png&#39;&#39;images/night.png&#39;&#39;images/anxiety.gif&#39;&#39;images/helicopter.gif&#39; &#39;images/alarm.png&#39;&#39;images/walking.gif&#39;&#39;images/flash.gif&#39; &#39;images/hug.gif&#39; &#39;images/testbox.png&#39; &#39;images/plane.png&#39; &#39;images/roadafterroe-2.png&#39; &#39;images/back.png&#39; &#39;images/home.png&#39; &#39;images/amanda8bit.png&#39; &#39;images/kaitlyn8bit.png&#39; &#39;images/emma8bit.png&#39; &#39;images/blender.gif&#39; &#39;images/bar.gif&#39;&#39;images/Pregnant.png&#39;&#39;images/Not Pregnant.png&#39; &#39;images/testbox.png&#39;&#39;images/clinic.png&#39; &#39;images/clock.gif&#39;&gt;&gt;
 &lt;&lt;cacheaudio &quot;clock&quot; &quot;audio/clock.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;blender&quot; &quot;audio/blender.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;base-track&quot; &quot;audio/base-track.mp3&quot;&gt;&gt;

@@ -10,7 +10,43 @@ Abortion Access Simulator
   "zoom": 1
 }
 
+:: StoryTitle
+Abortion Access Simulator
+
+:: StoryData
+{
+  "ifid": "4AD7C1A4-0D89-45C1-8BB5-E03AE7D5ED17",
+  "format": "SugarCube",
+  "format-version": "2.30.0",
+  "start": "Start",
+  "zoom": 1
+}
+
 :: StoryInit {"position":"700,275","size":"200,200"}
+/* Password Protection Script */
+<<script>>
+(function () {
+    var correctPassword = "FreeAndJust2024";
+    var userPassword = localStorage.getItem("userPassword");
+
+    // Check if the password is already saved in localStorage
+    if (userPassword === correctPassword) {
+        return; // Allow access
+    }
+
+    // Prompt the user for the password
+    var enteredPassword = prompt("This story is password protected. Please enter the password to continue:");
+
+    // If the entered password is correct, save it in localStorage and allow access
+    if (enteredPassword === correctPassword) {
+        localStorage.setItem("userPassword", correctPassword);
+    } else {
+        // If the password is incorrect, display an alert and restart the game
+        alert("Incorrect password. Please reload the page to try again.");
+        window.location.href = ""; // Refresh the page to restart
+    }
+})();
+<</script>>
 
 <<preload 'images/hospital.png' 'images/rtdlogo_1.gif' 'images/schedule.png' 'images/bed.png''images/bed2.png''images/kitchen.png''images/night.png''images/anxiety.gif''images/helicopter.gif' 'images/alarm.png''images/walking.gif''images/flash.gif' 'images/hug.gif' 'images/testbox.png' 'images/plane.png' 'images/roadafterroe-2.png' 'images/back.png' 'images/home.png' 'images/amanda8bit.png' 'images/kaitlyn8bit.png' 'images/emma8bit.png' 'images/blender.gif' 'images/bar.gif''images/Pregnant.png''images/Not Pregnant.png' 'images/testbox.png''images/clinic.png' 'images/clock.gif'>>
 <<cacheaudio "clock" "audio/clock.mp3">>
