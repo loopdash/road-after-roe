@@ -213,7 +213,7 @@ But you can’t help getting angry that you could not receive care that would ha
 [[You wonder how many other women are now feeling the same.->KaitlynEndCard]] 
 <</timed>>
 :: KaitlynEndCard {"position":"875,500","size":"100,100"}
-<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+<<audio ":all" stop>><div style="text-align: center;"><h5><em>Thank you for playing the Free & Just Abortion Access Simulator. 
 Our stories are based on real people who bravely shared their personal abortion journeys. 
 
 __Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
@@ -223,7 +223,7 @@ Kaitlyn Joshua is a mother from Baton Rouge, Louisiana who was turned away from 
 
 [[Read more about Kaitlyn's story here (npr.org)-> https://www.npr.org/sections/health-shots/2022/12/29/1143823727/bleeding-and-in-pain-she-couldnt-get-2-louisiana-ers-to-answer-is-it-a-miscarria]] 
 
-[[Learn more about the Ride to Decide Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
+[[Learn more about the Free & Just Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
 </div><div class="column left"><img src="images/kaitlyn8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
 
 :: Amanda {"position":"875,500","size":"100,100"}
@@ -327,7 +327,7 @@ You wake up in a hospital bed hours later. You decide to call Greg and reflect o
 <<next>>You and Greg are grateful the doctors were able to send you to the right place - [[knowing that many other women have not been as lucky as you. ->Amandafinal]]<<audio ":playing" fadeout>>
 <</timed>>
 :: Amandafinal {"position":"875,500","size":"100,100"}
-<div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+<div style="text-align: center;"><h5><em>Thank you for playing the Free & Just Abortion Access Simulator. 
 Our stories are based on real people who bravely shared their personal abortion journeys. 
 
 __Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
@@ -339,7 +339,7 @@ Zurawski sued the state of Texas, but her challenge was [[recently rejected->htt
 
 [[Read more about Amanda’s story here (cnn.com)-> https://www.cnn.com/2023/04/26/health/abortion-hearing-texas-senators-amanda-zurawski/index.html]] 
 
-[[Learn more about the Ride to Decide Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
+[[Learn more about the Free & Just Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
 </div><div class="column left"><img src="images/amanda8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
 :: septic {"position":"875,500","size":"100,100"}
 You know your health insurance isn't going to cover an airlift, so it seems like you have no choice but to wait until your health is bad enough to be considered life threatening. 
@@ -535,7 +535,7 @@ You decide to:
 <</timed>>
 :: EmmaEndCard {"position":"875,500","size":"100,100"}
 <<audio ":all" stop>>
-<div style="text-align: center;"><h5><em>Thank you for playing the Ride to Decide Abortion Access Simulator. 
+<div style="text-align: center;"><h5><em>Thank you for playing the Free & Just Abortion Access Simulator. 
 Our stories are based on real people who bravely shared their personal abortion journeys. 
 
 __Share their stories to help spread the word about the harm abortion bans cause for real people across the country.__</em></h5></div>
@@ -545,7 +545,7 @@ Emma Burns was a college student at Northern Arizona University when she needed 
 
 [[Read more about Emma's story here (azmirror.com)-> https://azmirror.com/2023/10/18/womens-lives-like-mine-hang-in-the-balance-if-medication-abortion-is-banned/]] 
 
-[[Learn more about the Ride to Decide Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
+[[Learn more about the Free & Just Bus Tour (freeandjust.us) ->https://www.freeandjust.us/ride-to-decide-bus-tour]]
 </div><div class="column left"><img src="images/emma8bit.png" width= "80%" style="padding-top: 25px; padding-right: 5px;display: block; border: none;margin-left: auto;margin-right: auto;"> </div>
 :: StoryScript [script]
 (function () {
